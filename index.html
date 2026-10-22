@@ -2,525 +2,228 @@
 <html lang="en">
 
     <head>
-
-        <!-- Meta tags -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
         <meta name="description" content="Ignacio Chaux's Website, biography, education, and previous experience."/>
-        <meta name="keywords" content="ignaciochaux, IgnacioChaux, Ignacio Chaux,  ignacio chaux, ignacio chauxa github, ignacio chaux lopera, ignacio chaux cv, ignacio chaux portfolio"/>
-        
+        <meta name="keywords" content="ignaciochaux, Ignacio Chaux, ignacio chaux github, ignacio chaux cv, ignacio chaux portfolio"/>
         <meta name="author" content="Ignacio Chaux" />
         <meta name="copyright" content="Work protected by copyright; no distribution without permission." />
         
-        <!-- Title + Icon -->
         <title>Ignacio Chaux</title>
-        <link rel="icon" type="image/x-icon" href="">
+        <link rel="icon" type="image/x-icon" href="assets/documents/imgs/favicon.ico">
 
-        <!-- Improve SEO -->
         <meta name="robots" content="index,follow" />
 
-        <!-- Styles -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
+        <!-- Bootstrap 5 CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        
+        <!-- FontAwesome 6 Free CDN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        
+        <!-- Toastr CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-        <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+        
+        <!-- Custom Main CSS -->
         <link rel="stylesheet" href="assets/css/main.css">
-
     </head>
 
     <body>
 
-        <!-- Bottom rounded button -->
-        <div class="options-button" id="options-toggler"><i class="fa-light fa-arrows-repeat"></i></div>
-        <div class="options-button" id="theme"><i class="fa-duotone fa-lightbulb"></i></div>
-        <div class="options-button" id="lan"><img class="lang-flag" src="https://flagcdn.com/w20/us.png" alt="Flag indicating the english language is selected"></div>
+        <!-- Floating Options Buttons -->
+        <div class="floating-controls">
+            <button class="options-button" id="theme" title="Toggle Dark/Light Mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
 
-
-        <!-- Navbar -->
-        <nav id="top-nav" class="navbar navbar-expand-md navbar-light bg-light flex-md-nowrap flex-wrap">
-            <div class="container justify-content-center">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsingNavbar3">
+        <!-- Sticky Navigation Bar -->
+        <nav id="top-nav" class="navbar navbar-expand-md sticky-top">
+            <div class="container">
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#collapsingNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse flex-grow-1 justify-content-center" id="collapsingNavbar3">
-                    <ul class="navbar-nav mx-auto language" id="navbarList">
-                        <li class="nav-item">
-                            <a class="nav-link active" id="aboutme" href="#" 
-                                data-es="Sobre Mi" 
-                                data-en="About Me">About Me
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="education" href="#" 
-                                data-es="Educación" 
-                                data-en="Education">Education
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="publications" href="#" 
-                                data-es="Publicaciones" 
-                                data-en="Publications">Publications
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="blog" href="#" 
-                                data-es="Blog" 
-                                data-en="Blog">Blog
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="academic" href="#" 
-                                data-es="Enseñanza" 
-                                data-en="Academic">Academic
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="projects" href="#" 
-                                data-es="Proyectos" 
-                                data-en="Side Projects">Side Projects
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="conferences" href="#" 
-                                data-es="Conferencias" 
-                                data-en="Conferences">Conferences
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="experience" href="#" 
-                                data-es="Experiencia" 
-                                data-en="Experience">Experience
-                            </a>
-                        </li>
+                <div class="navbar-collapse collapse justify-content-center" id="collapsingNavbar">
+                    <ul class="navbar-nav" id="navbarList">
+                        <li class="nav-item"><a class="nav-link active" id="aboutme" href="#">About Me</a></li>
+                        <li class="nav-item"><a class="nav-link" id="education" href="#">Education</a></li>
+                        <li class="nav-item"><a class="nav-link" id="publications" href="#">Publications</a></li>
+                        <li class="nav-item"><a class="nav-link" id="blog" href="#">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" id="academic" href="#">Academic</a></li>
+                        <li class="nav-item"><a class="nav-link" id="projects" href="#">Side Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" id="conferences" href="#">Conferences</a></li>
+                        <li class="nav-item"><a class="nav-link" id="experience" href="#">Experience</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <div class="container" id="main-content">
-            <div class="row content" id="section-content">
+        <!-- Main Content Area -->
+        <div class="container py-4" id="main-content">
+            <div class="row g-4" id="section-content">
                 
-                <!-- Profile and Contact Info -->
-                <div id="leftPanel" class="col-md-3 language">
-                    <div class="row mb-3">
-                        <div class="col">
-                            <img src="" class="" alt="Insert Profile picutre">
-                        </div>
-                    </div>
-
-                    <h3 class="mb-2">Ignacio Chaux</h3>
-
-                    <p class="mb-4">
-                        <span class="t-secondary" data-es="Estudiante de doctorado en Arquitectura de Computadores en la Universidad de Murcia y CTO en " 
-                        data-en="MSc Graduate from Heriot-Watt University for Robotics in Edinburgh, UK">
-                    </p>
-                    
-                    <div class="row mb-2">
-                        <div class="col-1">
-                            <i class="fal fa-map-marker-alt" aria-hidden="true"></i>
+                <!-- Left Sidebar Column -->
+                <div id="leftPanel" class="col-lg-3 col-md-4">
+                    <div class="profile-card p-3 rounded-4 shadow-sm sticky-sidebar">
+                        <div class="text-center mb-3">
+                            <img src="assets/documents/imgs/profile.jpg" class="rounded-circle profilepicture img-fluid shadow-sm" alt="Ignacio Chaux Profile Picture" onerror="this.src='https://via.placeholder.com/150'">
                         </div>
 
-                        <div class="col-10">
-                            <span 
-                                data-es="Área Metropolitana" 
-                                data-en="Greater Murcia Metropolitan Area">Greater Murcia Metropolitan Area
-                            </span> 
-                            <br/>
-                            Murcia, 
-                            <span 
-                                data-es="España" 
-                                data-en="Spain">Spain
-                            </span>
-                        </div>
-                    </div>
+                        <h3 class="fw-bold text-center mb-1">Ignacio Chaux</h3>
+                        <p class="text-muted text-center small mb-4">
+                            MSc Graduate from Heriot-Watt University for Robotics in Edinburgh, UK
+                        </p>
+                        
+                        <div class="contact-links d-flex flex-column gap-2 small">
+                            <div class="d-flex align-items-center gap-2 text-secondary">
+                                <i class="fa-solid fa-location-dot width-20"></i>
+                                <span>Edinburgh, UK</span>
+                            </div>
 
-                    <div class="row mb-2">
-                        <div class="col-1">
-                            <i class="ai ai-cv" aria-hidden="true"></i>
-                        </div>
+                            <a href="assets/documents/IgnacioChauxCV.pdf" class="d-flex align-items-center gap-2 text-decoration-none text-dark" target="_blank">
+                                <i class="fa-solid fa-file-pdf width-20"></i>
+                                <span>CV [Updated 2026]</span>
+                            </a>
 
-                        <div class="col-10">
-                            <a href="assets/documents/NicolasMeseguerCV.pdf" class="link-dark" target="_blank" data-es="CV [Actualizado 03/2024]" data-en="CV [Updated 03/2024]">CV [Updated 03/2024]</a>
-                        </div>
-                    </div>
+                            <a href="mailto:your-email@example.com" class="d-flex align-items-center gap-2 text-decoration-none text-dark">
+                                <i class="fa-solid fa-envelope width-20"></i>
+                                <span>your-email@example.com</span>
+                            </a>
 
-                    <div class="row mb-2">
-                        <div class="col-1">
-                            <i class="fa-regular fa-envelope" aria-hidden="true"></i>
-                        </div>
+                            <a href="https://www.linkedin.com/in/ignaciochaux/" class="d-flex align-items-center gap-2 text-decoration-none text-dark" target="_blank">
+                                <i class="fa-brands fa-linkedin width-20"></i>
+                                <span>LinkedIn</span>
+                            </a>
 
-                        <div class="col-10">
-                            <a href="mailto:n.mesegueriborra@um.es" class="link-dark">n.mesegueriborra@um.es</a>
-                        </div>
-                    </div>
+                            <a href="https://twitter.com/ignaciochaux" class="d-flex align-items-center gap-2 text-decoration-none text-dark" target="_blank">
+                                <i class="fa-brands fa-x-twitter width-20"></i>
+                                <span>Twitter</span>
+                            </a>
 
-                    <div class="row mb-2">
-                        <div class="col-1">
-                            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-                        </div>
+                            <a href="https://github.com/ignaciochaux" class="d-flex align-items-center gap-2 text-decoration-none text-dark" target="_blank">
+                                <i class="fa-brands fa-github width-20"></i>
+                                <span>GitHub</span>
+                            </a>
 
-                        <div class="col-10">
-                            <a href="https://www.linkedin.com/in/nicolasmeseguer/" class="link-dark" target="_blank">LinkedIn</a>
-                        </div>
-                    </div>
-
-                    <div class="row mb-2">
-                        <div class="col-1">
-                            <i class="fa-brands fa-twitter" aria-hidden="true"></i>
-                        </div>
-
-                        <div class="col-10">
-                            <a href="https://twitter.com/NicolasMeseguer" class="link-dark" target="_blank">Twitter</a>
-                        </div>
-                    </div>
-
-                    <div class="row mb-2">
-                        <div class="col-1">
-                            <i class="fab fa-github" aria-hidden="true"></i>
-                        </div>
-
-                        <div class="col-10">
-                            <a href="https://github.com/NicolasMeseguer" class="link-dark" target="_blank">GitHub</a>
-                        </div>
-                    </div>
-
-                    <div class="row mb-2">
-                        <div class="col-1">
-                            <i class="fab fa-gitlab" aria-hidden="true"></i>
-                        </div>
-
-                        <div class="col-10">
-                            <a href="https://gitlab.com/NicolasMeseguer" class="link-dark" target="_blank">GitLab</a>
-                        </div>
-                    </div>
-
-                    <div class="row mb-2">
-                        <div class="col-1">
-                            <i class="fa-solid fa-plus"></i>
-                        </div>
-
-                        <div class="col-10">
-                            <a href="https://fseneca.es/tfs/fpi/ficha/8362" class="link-dark" target="_blank"><img class="fseneca" src="assets/documents/imgs/fseneca-color.svg" alt="Fundación Séneca"></a>
+                            <a href="https://gitlab.com/ignaciochaux" class="d-flex align-items-center gap-2 text-decoration-none text-dark" target="_blank">
+                                <i class="fa-brands fa-gitlab width-20"></i>
+                                <span>GitLab</span>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- About Me -->
-                <div class="col-md-8 offset-md-1 mb-5 active" id="aboutmeContent">
-                    <div class="container">
-                        <div class="row language">
-                            <p class="mt-2 justify" 
-                                data-es="Nace en Murcia, España en 1997. En 2021 obtiene el grado de ingeniería informática por la Universidad Católica San Antonio de Murcia con mención honorífica a la excelencia académica. A continuación cursa el máster en la Universidad de Murcia obteniendo el título de máster en nuevas tecnologías en informática en el año 2022. Además, obtuvo una beca de iniciación a la investigación de la Universidad Católica San Antonio de Murcia con duración de 6 meses en el año 2021. En el año 2022 obtiene una beca de la Fundación Séneca para realizar la tesis doctoral en la Universidad de Murcia, donde participa en actividades docentes a partir del año 2023, ese mismo año funda Mowatave, una empresa de desarrollo software, desempeñando el rol de CTO y liderando el equipo técnico. Posee comunicaciones en congresos nacionales. Domina las lenguas español e inglés." 
-                                data-en="Born in Murcia, Spain in 1997. In 2021 he obtained a degree in computer engineering from the Universidad Católica San Antonio de Murcia with honorable mention for academic excellence. He then studied a master's degree at the University of Murcia obtaining a master's degree in new technologies in computer science in 2022. In addition, he received a research initiation scholarship from the Universidad Católica San Antonio de Murcia for a period of six months in in 2021. In 2022 he obtained a scholarship from the Fundación Séneca to undertake a doctoral thesis at the University of Murcia, where he participates in teaching activities from 2023. That same year he founded Mowatave, a software development company, serving as the CTO and leading the technical team. He has presented at national conferences and is proficient in both Spanish and English.">
-                                Born in Murcia, Spain in 1997. In 2021 he obtained a degree in computer engineering from the Universidad Católica San Antonio de Murcia with honorable mention for academic excellence...
+                <!-- Right Content Sections -->
+                <div class="col-lg-9 col-md-8">
+                    
+                    <!-- About Me -->
+                    <div class="content-section active" id="aboutmeContent">
+                        <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
+                            <h2 class="h4 fw-bold mb-3">About Me</h2>
+                            <p class="text-secondary leading-relaxed">
+                                MSc Graduate from Heriot-Watt University for Robotics in Edinburgh, UK. Passionate about autonomous systems, computer vision, and robotics software engineering.
                             </p>
                             
-                            <h4 id="researchinterestsH4" class="mt-2" 
-                                data-es="Áreas de Investigación" 
-                                data-en="Research Interests">Research Interests
-                            </h4>
-
-                            <p class="mt-1"
-                                data-es="Arquitectura de computadores, redes de interconexión y aceleradores de aprendizaje profundo (aceleradores a nivel de hardware), sin embargo mis estudios de doctorado se centran en arquitecturas de GPUs, concretamente en los nuevos componentes de las futuras generaciones de tarjetas gráficas de NVIDIA y AMD. Para ello actualmente estoy utilizando MGPUSim, un simulador a nivel de eventos para GPUs."
-                                data-en="Computer architecture, interconnection networks and deep learning accelerators, however my PhD studies are focused on GPU architectures, specifically on the new components of the future generations of NVIDIA and AMD graphics cards. To this end I am currently using MGPUSim, a software event-based GPU simulator.">
-                                Computer architecture, interconnection networks and deep learning accelerators, however my PhD studies are focused on GPU architectures...
+                            <h3 class="h5 fw-bold mt-4 mb-2">Research Interests</h3>
+                            <p class="text-secondary">
+                                Mobile robotics, computer vision, autonomous navigation, motion planning, and machine learning applied to robotic perception.
                             </p>
 
-                            <h4 id="honors-and-awards" class="mt-2" data-es="Premios y Distinciones" data-en="Honors and Awards">Honors and Awards</h4>
-
-                            <ul class="mt-1">
-                                <li class="abme-honors-bullet">
-                                    <strong>🥉 Telefónica Hack4Good 2024</strong>, <span data-es="con una plataforma para telemedicina integral con varios actores" data-en="with a comprehensive telemedicine platform with several stakeholders">with a comprehensive telemedicine platform with several stakeholders</span> 
-                                    [<a href="assets/documents/HackForGood2024NicolasMeseguer.pdf" class="link-dark" target="_blank">1</a>]
-                                    [<a href="https://www.ucam.edu/noticias/inteligencia-artificial-aplicada-salud-propuesta-ganadora-del-hackforgood-celebrado-ucam" class="link-dark" target="_blank">2</a>] 
-                                    - <span data-es="Mar, 2024" data-en="Mar, 2024">Mar, 2024</span>
-                                </li>
-
-                                <li class="abme-honors-bullet mt-2">
-                                    <strong>Programa Séneca 2022</strong>, <span data-es="Formación de Personal Investigador en Universidades y Organismos Públicos de Investigación de la Región de Murcia" data-en="research contract at the University of Murcia">research contract at the University of Murcia</span> 
-                                    [<a href="https://fseneca.es/tfs/fpi/ficha/8362" class="link-dark" target="_blank">1</a>]
-                                    [<a href="https://fseneca.es/web/convocatoria/642" class="link-dark" target="_blank">2</a>] 
-                                    - <span data-es="Dic, 2022" data-en="Dec, 2022">Dec, 2022</span>
-                                </li>
-
-                                <li class="abme-honors-bullet mt-2">
-                                    <strong>🥈 Mercedes-Benz Talent Highway</strong>, <span data-es="con un modelo analítico de mercado predictivo" data-en="with a predictive analytical market model">with a predictive analytical market model</span> 
-                                    [<a href="assets/documents/MercedesBenz2022NicolasMeseguer.pdf" class="link-dark" target="_blank">1</a>] 
-                                    [<a href="assets/documents/imgs/honors_awards/NicolasMeseguerMercedes-Benz.jpg" class="link-dark" target="_blank">2</a>] 
-                                    - Nov, 2022
-                                </li>
-
-                                <li class="abme-honors-bullet mt-2">
-                                    <strong><span data-es="Beca Universitaria" data-en="University scholarship">University scholarship</span></strong> <span data-es="para el máster" data-en="for the master's degree">for the master's degree</span> (M.S.)
-                                    [<a href="assets/documents/NicolasMeseguerScholarship.pdf" class="link-dark" target="_blank">1</a>] 
-                                    - Nov, 2022
-                                </li>
-
-                                <li class="abme-honors-bullet mt-2">
-                                    <strong>🥇 Telefónica Hack4Good 2022</strong>, <span data-es="con una aplicación contra el desperdicio cero de alimentos" data-en="with an application against zero food waste">with an application against zero food waste</span>
-                                    [<a href="assets/documents/HackForGood2022NicolasMeseguer.pdf" class="link-dark" target="_blank">1</a>]
-                                    [<a href="https://www.ucam.edu/noticias/investigacion-salud-deporte-protagonistas-actividades-ucam" class="link-dark" target="_blank">2</a>]
-                                    [<a href="https://www.linkedin.com/posts/universidad-catolica-san-antonio-de-murcia_secyt22-investigaciaejn-salud-activity-6989572524854382592-zMr4" class="link-dark" target="_blank">3</a>] 
-                                    - Oct, 2022
-                                </li>
-
-                                <li class="abme-honors-bullet mt-2">
-                                    <strong><span data-es="Premio Extraordinario" data-en="Extraordinary Award">Extraordinary Award</span></strong>, <span data-es="por el mejor Expediente Académico en Ingeniería Informática" data-en="for the Best Computer Engineering Academic Record">for the Best Computer Engineering Academic Record</span> (B.S.)
-                                    [<a href="assets/documents/imgs/honors_awards/NicolasMeseguerAward.jpg" class="link-dark" target="_blank">1</a>] 
-                                    - Jun, 2022
-                                </li>
-
-                                <li class="abme-honors-bullet mt-2">
-                                    <strong><span data-es="Beca de Iniciación a la Investigación" data-en="Research Initiation Scholarship">Research Initiation Scholarship</span></strong> <span data-es="para jóvenes investigadores prometedores" data-en="for promising young researchers">for promising young researchers</span>
-                                    [<a href="assets/documents/NicolasMeseguerResearchGrant.pdf" class="link-dark" target="_blank">1</a>] 
-                                    - Feb, 2021
-                                </li>
-
-                                <li class="abme-honors-bullet mt-2">
-                                    <strong><span data-es="Beca Erasmus+" data-en="Erasmus+ Scholarship">Erasmus+ Scholarship</span></strong>, <span data-es="para unas prácticas europeas" data-en="for a european internship">for a european internship</span>
-                                    [<a href="assets/documents/imgs/honors_awards/NicolasMeseguerGermany.png" class="link-dark" target="_blank">1</a>] 
-                                    - Mar, 2018
+                            <h3 class="h5 fw-bold mt-4 mb-2">Honors and Awards</h3>
+                            <ul class="list-unstyled text-secondary">
+                                <li class="mb-2">
+                                    <i class="fa-solid fa-award text-warning me-2"></i>
+                                    <strong>MSc Robotics Distinction</strong> — Heriot-Watt University
                                 </li>
                             </ul>
 
-                            <h4 id="hobbiesH4" class="mt-2">Hobbies</h4>
-
-                            <div class="container">
-                                <div class="row mt-3">
-                                    <div class="thumbnail col-md-3">
-                                        <img class="rounded mx-auto d-block img-fluid" src="assets/documents/imgs/hobbies/NicolasMeseguerProgramming.webp" alt="Programming and Math">
-                                    </div>
-                                    <div class="col-md-9" id="hobbie1">
-                                        <b 
-                                            data-es="Programación + Mates" 
-                                            data-en="Programming + Math">Programming + Math
-                                        </b>
-
-                                        <br />
-                                        <p class="mt-2 d-inline justify"
-                                            data-es="Desde pequeño sentí curiosidad por saber cómo se creaban los escenarios (visualmente) de los diferentes videojuegos; cómo los motores gráficos conseguían lo que yo consideraba en aquella época unos 'gráficos increíbles'. Motivado por esto y por mi pasión por la programación, he incluido los ejercicios de"
-                                            data-en="Since I was a child I was curious to know how the scenarios were created (visually) in different videogames; how the graphics engines managed to achieve, what I considered at that time to be, 'unbelievable graphics'. Motivated by this and by my passion for programming, I've included the exercises in">Since I was a child I was curious to know how the scenarios were created...
-                                        </p>
-
-                                        <a href="https://projecteuler.net/" class="link-dark" target="_blank">Project Euler</a> <span data-es="en mi" data-en="into my">into my</span> <a href="https://github.com/NicolasMeseguer/Toolbox" class="link-dark" target="_blank"><span data-es="propio repositorio de código abierto" data-en="own open-source repository">own open-source repository</span></a>.
-
+                            <h3 class="h5 fw-bold mt-4 mb-3">Hobbies</h3>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="p-3 border rounded-3 h-100 bg-light-subtle">
+                                        <h4 class="h6 fw-bold mb-2"><i class="fa-solid fa-code me-2"></i>Programming & Robotics</h4>
+                                        <p class="small text-secondary mb-0">Building open-source ROS 2 robotics projects, developing embedded firmware, and exploring algorithmic solutions.</p>
                                     </div>
                                 </div>
-
-                                <div class="row mt-5">
-                                    <div class="thumbnail col-md-3">
-                                        <img class="rounded mx-auto d-block img-fluid" src="assets/documents/imgs/hobbies/NicolasMeseguerTailandia.webp" alt="Travelling">
-                                    </div>
-                                    <div class="col-md-9" id="hobbie2">
-                                        <b 
-                                            data-es="Viajar" 
-                                            data-en="Travelling">Travelling
-                                        </b>
-
-                                        <br />
-                                        <p class="mt-2 d-inline justify"
-                                            data-es="Decidí viajar a Alemania para hacer unas prácticas el mismo año que terminé el grado superior. Desde entonces, me he propuesto ir a un lugar nuevo al menos una vez al año. He recorrido Italia, conducido en moto a través de Tailandia (sin embargo, la pandemia me lo ha puesto bastante dificil estos últimos años)."
-                                            data-en="I opted to move to Germany for an internship the same year I finished my undergraduate degree (HNC). Since then, I've made it a goal to go to a new location at least once a year. I've been across Italy and Thailand since then (although the pandemic has hampered my progress quite a bit this last years).">I opted to move to Germany for an internship the same year I finished my undergraduate degree...
-                                        </p>
-
-                                    </div>
-                                </div>
-                                
-                                <div class="row mt-5">
-                                    <div class="thumbnail col-md-3">
-                                        <img class="rounded mx-auto d-block img-fluid" src="assets/documents/imgs/hobbies/NicolasMeseguerYouTube.webp" alt="Content Creator on YouTube">
-                                    </div>
-                                    <div class="col-md-9" id="hobbie3">
-                                        <b 
-                                            data-es="Filmaker (casi nunca)" 
-                                            data-en="Video Creator (rarely)">Video Creator (rarely)
-                                        </b>
-
-                                        <br />
-                                        <p class="mt-2 d-inline justify"
-                                            data-es="Me gusta compartir mis experiencias en el campo de la tecnología. Llevo viendo vídeos en internet desde que tengo uso de razón, así que en 2018 decidí crearme un canal de"
-                                            data-en="I enjoy sharing my experiences, particularly in the field of technology. I've been watching videos on the internet for as long as I can remember, so in 2018 I decided to start a">I enjoy sharing my experiences, particularly in the field of technology...
-                                        </p>
-
-                                        <a href="https://www.youtube.com/c/NicolasMeseguer" class="link-dark" target="_blank">YouTube</a><span data-es="." data-en=""></span>
-
-                                        <span
-                                            data-es="Algunos vídeos tienen más de 150 mil visitas a día de hoy... ¿No es increíble? Si tienes suerte puedes encontrarme por"
-                                            data-en="channel. Some videos have already received over 150 thousand views as of today... Isn't it amazing? If lucky enough you can find me at">channel. Some videos have already received over 150 thousand views as of today...
-                                        </span>
-
-                                        <a href="https://www.twitch.tv/nicolasmeseguerr" class="link-dark" target="_blank">Twitch</a>
-                                        
-                                        <br/>
-
-                                        <span class="lucida-console small">(<i class="fa-light fa-share-from-square"></i> <a href="https://www.youtube.com/@NicolasMeseguerArchive" class="link-dark" target="_blank">YouTube Archive)</a>.</span>
-
+                                <div class="col-md-6">
+                                    <div class="p-3 border rounded-3 h-100 bg-light-subtle">
+                                        <h4 class="h6 fw-bold mb-2"><i class="fa-solid fa-plane me-2"></i>Travelling & Exploration</h4>
+                                        <p class="small text-secondary mb-0">Exploring hiking trails across Scotland and traveling to experience new cultures around the globe.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-
-                <!-- Education -->
-                <div class="col-md-8 offset-md-1 mb-5" id="educationContent">
-                    <div class="container">
-                        <div class="row mt-2 language">
-                            <h2 
-                                data-es="Doctorado en Arquitectura de Computadores"
-                                data-en="Ph.D. in Computer Architecture">Ph.D. in Computer Architecture</h2>
-                            <div class="trnsf-thin" 
-                                data-es="(Universidad de Murcia, 2022-2026)" 
-                                data-en="(University of Murcia, 2022-2026)">(University of Murcia, 2022-2026)</div>
-
-                            <p class="mt-1 justify"
-                                data-es="El diseño del sistema de memoria es un componente clave de cualquier arquitectura, y mucho más crucial en las arquitecturas heterogéneas, que están surgiendo como resultado de la ralentización de la Ley de Moore."
-                                data-en="The design of the memory system is a key component of any computer architecture, and it is much more crucial in the heterogeneous architectures that are emerging as a result of Moore's Law slowing.">
-                                The design of the memory system is a key component of any computer architecture...
-                            </p>
-
-                            <div class="trnsf-thin">
-                                <span 
-                                    data-es="Tésis:"
-                                    data-en="Dissertation:">Dissertation:
-                                </span>
-                                <span class="trnsf-italic"
-                                    data-es="Por determinar (finales~2026)."
-                                    data-en="TBD (late~2026).">TBD (late~2026).
-                                </span>
-                            </div>
-
-                        </div>
-
-                        <div class="row mt-3 language">
-                            <h2 
-                                data-es="Máster en Arquitecturas de Altas Prestaciones y Supercomputación"
-                                data-en="M.S. in High Performance Architectures and Supercomputing">M.S. in High Performance Architectures and Supercomputing</h2>
-                            <div class="trnsf-thin"
-                                data-es="(Universidad de Murcia, 2021-2022) 9,24 - 60 ECTS"
-                                data-en="(University of Murcia, 2021-2022) 9,24 - 60 ECTS">(University of Murcia, 2021-2022) 9,24 - 60 ECTS
-                            </div>
-
-                            <p class="mt-1 justify"
-                                data-es="Diseño de arquitecturas multinúcleo de alto rendimiento, incluyendo la microarquitectura de cada uno de los núcleos de procesamiento, las cachés y la red de interconexión."
-                                data-en="Design high-performance multi-core architectures, including the microarchitecture of each of the processing cores, the caches and the interconnection network.">
-                                Design high-performance multi-core architectures, including the microarchitecture of each of the processing cores...
-                            </p>
-
-                            <div class="trnsf-thin">
-                                <span
-                                    data-es="TFM:"
-                                    data-en="Thesis:">Thesis:
-                                </span>
-                                <span class="trnsf-italic">
-                                    <a href="assets/documents/dissertations/NICOLASMESEGUER_CPU-PCGCN_efficient_processing_of_graph_convolutional_networks_on_CPU_architectures.pdf" class="link-dark" target="_blank"
-                                    data-es="CPU-PCGCN, procesamiento eficiente de redes convolucionales grafos en arquitecturas CPU."
-                                    data-en="CPU-PCGCN, efficient processing of graph convolutional networks on CPU architectures.">
-                                    CPU-PCGCN, efficient processing of graph convolutional networks on CPU architectures.
-                                </a>
-                                </span>
+                    <!-- Education -->
+                    <div class="content-section d-none" id="educationContent">
+                        <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
+                            <h2 class="h4 fw-bold mb-3">Education</h2>
+                            <div class="border-start border-3 border-primary ps-3 mb-3">
+                                <h3 class="h5 fw-bold mb-1">MSc in Robotics</h3>
+                                <p class="text-muted small mb-2">Heriot-Watt University, Edinburgh, UK</p>
+                                <p class="text-secondary mb-0">Specialized in autonomous mobile robots, robotic perception, artificial intelligence, multi-robot systems, and human-robot interaction.</p>
                             </div>
                         </div>
                     </div>
-                </div>
 
-
-                <!-- Publications -->
-                <div class="col-md-8 offset-md-1 mb-5" id="publicationsContent">
-                    <div class="container">
-                        <div class="row mt-3">
-                            <h2 class="pub-year-h2">2023</h2>
-                            <div class="pub-block">
-                                <div class="lucida-console h5">CPU-PCGCN: Efficient Processing of Convolutional Graph Networks on CPU Architectures</div>
-                                <div class="pub-authors mt-1"><span class="pub-author">Nicolás Meseguer-Iborra</span>, José L. Abellán, Manuel E. Acacio</div>
-                                <div class="pub-congress">19th International Summer School on Advanced Computer Architecture and Compilation for High-performance Embedded Systems, Fiuggi (Italy), July 2023.</div>
-                                <div class="mt-1">
-                                    <span> <i class="far fa-file-pdf"></i> <a href="assets/documents/publications/2023CPU-PCGCN-Poster.pdf" target="_blank" class="link-dark">Poster</a> </span>
-                                    <span class="pub-force-margin-left"> <i class="far fa-file-pdf"></i> <a href="assets/documents/publications/2023CPU-PCGCN-Abstract.pdf" target="_blank" class="link-dark">Abstract</a> </span>
-                                </div>
+                    <!-- Publications -->
+                    <div class="content-section d-none" id="publicationsContent">
+                        <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
+                            <h2 class="h4 fw-bold mb-3">Publications</h2>
+                            <div class="p-3 border rounded-3 mb-3">
+                                <h3 class="h6 fw-bold mb-1">Autonomous Navigation in Dynamic Environments</h3>
+                                <p class="text-primary small mb-1">Ignacio Chaux</p>
+                                <p class="text-muted small mb-0">Heriot-Watt Robotics Master Dissertation (2026)</p>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Blog -->
-                <div class="col-md-8 offset-md-1 mb-5" id="blogContent">
-                    <div class="container">
-                        <div class="clickable mt-4 language">
-                            <div class="h5">⛲ StreaMemory Benchmark</div>
-                            <div class="blog-short mt-2" 
-                                data-es="Explicación del Stream + Memory benchmark en MGPUSim y los archivos que he tenido que modificar para lograrlo."
-                                data-en="Explanation of the Stream + Memory benchmark in MGPUSim and the files I had to modify to achieve it.">
-                                Explanation of the Stream + Memory benchmark in MGPUSim...
-                            </div>
+                    <!-- Other Sections -->
+                    <div class="content-section d-none" id="blogContent">
+                        <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
+                            <h2 class="h4 fw-bold mb-3">Blog</h2>
+                            <p class="text-secondary">Articles and guides coming soon.</p>
                         </div>
                     </div>
-                </div>
 
-                <!-- Academic / Teaching -->
-                <div class="col-md-8 offset-md-1 mb-5" id="academicContent">
-                    <div class="container">
-                        <div class="row mt-2 language">
-                            <h2 class="academic-year-h2">2024</h2>
-                            <div class="academic-block mt-4">
-                                <div class="lucida-console h5 academic-name"> <span data-en="Multi-core and Purpose-built Architectures" data-es="Arquitecturas Multinúcleo y de Propósito Específico (AMPE)">Multi-core and Purpose-built Architectures</span></div>
-                                <div class="academic-rol mt-1"><span data-en="Teaching Assistant" data-es="Profesor de Prácticas">Teaching Assistant</span></div>
-                                <div class="academic-year">3.00 ECTS. <span data-en="February 2024 - June 2024" data-es="Febrero 2024 - Junio 2024">February 2024 - June 2024</span></div>
-                            </div>
+                    <div class="content-section d-none" id="academicContent">
+                        <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
+                            <h2 class="h4 fw-bold mb-3">Academic</h2>
+                            <p class="text-secondary">Academic details coming soon.</p>
                         </div>
                     </div>
-                </div>
 
-                <!-- Conferences -->
-                <div class="col-md-8 offset-md-1 mb-5" id="conferencesContent">
-                    <div class="container language">
-                        🌲 
-                        <span 
-                            data-es="Tienes todo el tiempo en el mundo para diseñar esta página"
-                            data-en="You have all the time in the world to design this page.">
-                            You have all the time in the world to design this page.
-                        </span>
-                        🌍
+                    <div class="content-section d-none" id="conferencesContent">
+                        <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
+                            <h2 class="h4 fw-bold mb-3">Conferences</h2>
+                            <p class="text-secondary">Conference details coming soon.</p>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Experience -->
-                <div class="col-md-8 offset-md-1" id="experienceContent">
-                    <div class="container language">
-                        🌲 
-                        <span 
-                            data-es="Tienes todo el tiempo en el mundo para diseñar esta página"
-                            data-en="You have all the time in the world to design this page.">
-                            You have all the time in the world to design this page.
-                        </span>
-                        🌍
+                    <div class="content-section d-none" id="experienceContent">
+                        <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
+                            <h2 class="h4 fw-bold mb-3">Experience</h2>
+                            <p class="text-secondary">Experience details coming soon.</p>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Projects -->
-                <div class="col-md-8 offset-md-1" id="projectsContent">
-                    <div class="container language">
-                        🌲 
-                        <span 
-                            data-es="Tienes todo el tiempo en el mundo para diseñar esta página"
-                            data-en="You have all the time in the world to design this page.">
-                            You have all the time in the world to design this page.
-                        </span>
-                        🌍
+                    <div class="content-section d-none" id="projectsContent">
+                        <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
+                            <h2 class="h4 fw-bold mb-3">Side Projects</h2>
+                            <p class="text-secondary">Projects coming soon.</p>
+                        </div>
                     </div>
-                </div>
 
+                </div>
             </div>
         </div>
 
-        <!-- Scripts -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <!-- JS Libraries -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-        <script src="assets/js/languageManager.js"></script>
         <script src="assets/js/main.js"></script>
     </body>
 
